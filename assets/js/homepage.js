@@ -53,6 +53,11 @@ if (username) {
 userFormEl.addEventListener("submit", formSubmitHandler);
 
 var displayRepos = function(repos, searchTerm){
+    // check if api returned any repos
+if (repos.length === 0) {
+    repoContainerEl.textContent = "No repositories found.";
+    return;
+    }
     console.log(repos);
     console.log(searchTerm);
     // clear old content
